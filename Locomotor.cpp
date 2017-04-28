@@ -7,12 +7,14 @@ std::cin>>max_power>>name>>model_number>>cost>>description>>image_filename;
 }
 
 void Locomotor::view_parts(){
-std::cout<<"Locomotor Max Power:"<<max_power<<std::endl
-<<"Locomotor Part Name: "<<name<<std::endl
-<<"Locomotor Model Number: "<<model_number<<std::endl
-<<"Locomotor Part Cost: "<<cost<<std::endl
-<<"Locomotor Part Desription: "<<description<<std::endl
-<<"Locomotor Image Filename: "<<image_filename<<std::endl<<std::endl;
+	std::string str_1;
+	str_1 = "Locomotor Max Power:" + std::to_string(max_power) + "\n" +
+		"Locomotor Part Name:" + name + "\n" +
+		"Locomotor Model Number:" + std::to_string(model_number) + "\n" +
+		"Locomotor Part Cost:" + std::to_string(cost) + "\n" +
+		"Locomotor Part Description:" + description + "\n" +
+		"Locomotor Image Filename:" + image_filename + "\n";
+fl_message(str_1.c_str()); Fl::check();
 }
 
 void Locomotor::save(std::ostream& ost){

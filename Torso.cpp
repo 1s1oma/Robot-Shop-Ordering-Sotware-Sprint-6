@@ -8,13 +8,15 @@ std::cin>>battery_compartments>>max_arms>>name>>model_number>>cost>>description>
 }
 
 void Torso::view_parts(){
-std::cout<<"Torso Battery Compartments: "<<battery_compartments<<std::endl
-<<"Torso Max Arms: "<<max_arms<<std::endl
-<<"Torso Part Name: "<<name<<std::endl
-<<"Torso Model Number: "<<model_number<<std::endl
-<<"Torso Part Cost: "<<cost<<std::endl
-<<"Torso Part Desription: "<<description<<std::endl
-<<"Torso Image Filename: "<<image_filename<<std::endl<<std::endl;
+	std::string str_1;
+	str_1 = "Torso Battery Compartments:" + std::to_string(battery_compartments) + "\n" +
+		"Torso Max Arms:" + std::to_string(max_arms) + "\n" +
+		"Torso Part Name:" + name + "\n" +
+		"Torso Model Number:" + std::to_string(model_number) + "\n" +
+		"Torso Part Cost:" + std::to_string(cost) + "\n" +
+		"Torso Part Description:" + description + "\n" +
+		"Torso Image Filename:" + image_filename + "\n";
+	fl_message(str_1.c_str()); Fl::check();
 }
 
 void Torso::save(std::ostream& ost){
